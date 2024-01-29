@@ -1,0 +1,2 @@
+Universal_Robots_ROS_Driver/ur_calibration:Universal_Robots_ROS_Driver/ur_dashboard_msgs:Universal_Robots_ROS_Driver/ur_robot_driver
+-DCATKIN_DEVEL_PREFIX=/home/fizzer/2403_TMS_Cobot/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/fizzer/2403_TMS_Cobot/catkin_ws/install -G Unix Makefiles
