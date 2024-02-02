@@ -99,7 +99,7 @@ while keep_running:
         break
 
     # do something...
-    if move_completed and state.output_int_register_0 == 1:
+    if move_completed and state.output_int_register_0 == 1: # in urp file, register is set to 1 before program start, robot is requesting the next pose
         move_completed = False
         new_setp = setp1 if setp_to_list(setp) == setp2 else setp2
         list_to_setp(setp, new_setp)
@@ -107,13 +107,13 @@ while keep_running:
         # send new setpoint
         con.send(setp)
         watchdog.input_int_register_0 = 1
-    elif not move_completed and state.output_int_register_0 == 0:
+    elif not move_completed and state.output_int_register_0 == 0: # output_int_register_0 = 0 means robot confirms move was executed
         print("Move to confirmed pose = " + str(state.target_q))
         move_completed = True
-        watchdog.input_int_register_0 = 0
+        watchdog.input_int_register_0 = 0 # lets robot know confirmation of move was acknowledged
 
-    # kick watchdog
-    con.send(watchdog)
+# kick watchdog
+con.send(watchdog)
 
 con.send_pause()
 
