@@ -11,3 +11,4 @@ The following is a basic layout for our Code Respostitory
 
 ### Repositories Used
 https://github.com/UniversalRobots/Universal_Robots_ROS_Driver 
+https://github.com/UniversalRobots/RTDE_Python_Client_Library
